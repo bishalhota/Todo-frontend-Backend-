@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="Navbar">
+        <button class="btn1" id="button1">Signup</button>
+        <button class="btn1" id="button2">Signin</button>
+    </div>
+
+    <div class="main" id="x">
+        <div class="form-container">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" id="closesignup">Register</button>
+        </div>
+    </div>
+
+    <div class="maintodo" id="maintodos">
+        <div class="todo-form" id="todoForm" >
+            <input type="text" id="todoTitle" placeholder="Title" required>
+            <textarea id="todoDescription" placeholder="Description" required></textarea>
+            <button id="submitTodo">Add</button>
+            <button id="cancelTodo">Cancel</button>
+        </div>
+    </div>
+
+
+    <div class="todomain">
+        <div class="container">
+            <h1>To-Do List</h1>
+            <div class="add-todo">
+                <button id="addTodoBtn">➕ Add To-Do</button>
+            </div>
+        </div>
+        <div id="todoList">
+            <!-- Newly added to-dos will be appended here -->
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
