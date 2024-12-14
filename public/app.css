@@ -26,8 +26,14 @@ body {
  .form-container button { background-color: #b0a295; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; } 
  .form-container button:hover { background-color: #9e8c7c; } 
 
+.main2{
+    display: none; /* Hide the form initially */ position: fixed; /* Fixed position to stay above content */ top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */ z-index: 1000; /* High z-index to be above other elements */ justify-content: center; align-items: center;
+}
 
-
+.form-container2 { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; text-align: center; }
+ .form-container2 input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; } 
+ .form-container2 button { background-color: #b0a295; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; } 
+ .form-container2 button:hover { background-color: #9e8c7c; } 
 
 .btn1 {
     background: #5E5DF0;

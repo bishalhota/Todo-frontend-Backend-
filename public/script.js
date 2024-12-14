@@ -7,6 +7,12 @@ signupbtn.addEventListener("click", function () {
     maindiv.style.display = "flex";
 });
 
+const signinbtn = document.getElementById("button2");
+signinbtn.addEventListener("click",function (){
+    const maindiv = document.getElementById("y");
+    maindiv.style.display = "flex";
+})
+
 document.getElementById("closesignup").addEventListener("click", () => {
     document.getElementById("x").style.display = "none";
 })
@@ -119,4 +125,35 @@ document.getElementById("closesignup").addEventListener("click",async () =>{
         console.log("Error during Signup:",error);
     }
 
+})
+
+
+//signin endpoint 
+document.getElementById("closesignin").addEventListener("click",async() =>{
+    const email = document.getElementById("Email2").value;
+    const password = document.getElementById("Password2").value;
+
+    try{
+
+        const response = await fetch("http://localhost:3000/user/signin",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({email,password}),
+        });
+
+        if(response.ok){
+            const result = await response.json();
+            localStorage.setItem("token",result.token);
+            document.getElementById("y").style.display="none";
+            alert("Signed in Successfully!");
+        }else{
+            const result = await response.json();
+            alert(result.msg || "Error signing user");
+        }
+
+    }catch(error){
+        console.log("Error during signin:",error);
+    }
 })
