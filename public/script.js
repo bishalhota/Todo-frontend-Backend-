@@ -92,3 +92,31 @@ todomain.addEventListener("click", (event) => {
     }
 });
 
+/* connecting backend and frontend from here */
+document.getElementById("closesignup").addEventListener("click",async () =>{
+    const firstname = document.querySelector("input[placeholder='Firstname']").value;
+    const Lastname = document.querySelector("input[placeholder='Lastname']").value;
+    const email = document.querySelector("input[placeholder='Email']").value;
+    const password = document.querySelector("input[placeholder='Password']").value;
+
+    try{
+        const response = await fetch("http://localhost:3000/user/signup",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({firstname:firstname,Lastname:Lastname,email,password}),
+        });
+
+        if(response.ok){
+            alert("User registered successfully!");
+            document.getElementById("x").style.display="none";
+        }else{
+            const result = await response.json();
+            alert(result.msg || "Error registering user");
+        }
+    }catch(error){
+        console.log("Error during Signup:",error);
+    }
+
+})
